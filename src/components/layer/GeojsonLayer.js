@@ -145,14 +145,14 @@ export default {
 
     setFeatureState(featureId, state) {
       if (this.map) {
-        const params = { id: featureId, source: this.source };
+        const params = { id: featureId, source: this.source.id };
         return this.map.setFeatureState(params, state);
       }
     },
 
     getFeatureState(featureId) {
       if (this.map) {
-        const params = { id: featureId, source: this.source };
+        const params = { id: featureId, source: this.source.id };
         return this.map.getFeatureState(params);
       }
     },
@@ -161,7 +161,7 @@ export default {
       if (this.map) {
         const params = {
           id: featureId,
-          source: this.source,
+          source: this.source.id,
           sourceLayer
         };
         return this.map.removeFeatureState(params, key);
