@@ -143,27 +143,20 @@ export default {
       this.$_emitEvent("added", { layerId: this.layerId });
     },
 
-    setFeatureState(featureId, state) {
+    setFeatureState(params, state) {
       if (this.map) {
-        const params = { id: featureId, source: this.source.id };
         return this.map.setFeatureState(params, state);
       }
     },
 
-    getFeatureState(featureId) {
+    getFeatureState(params) {
       if (this.map) {
-        const params = { id: featureId, source: this.source.id };
         return this.map.getFeatureState(params);
       }
     },
 
-    removeFeatureState(featureId, sourceLayer, key) {
+    removeFeatureState(params, sourceLayer, key) {
       if (this.map) {
-        const params = {
-          id: featureId,
-          source: this.source.id,
-          sourceLayer
-        };
         return this.map.removeFeatureState(params, key);
       }
     }
